@@ -17,6 +17,11 @@ export const getPage = createSelector(getPageState, (state) => {
 export const getProductsState = createFeatureSelector<ProductsState>('products')
 
 export const getProductsSelector = createSelector(getProductsState, (state) => {
+    // Array of products
+    return state.products
+})
+
+export const getProductsSlice = createSelector(getProductsState, (state) => {
     const itemsPerPage = 10 // Number of items to display per page
     const productsArray = state.products // Array of products
     const page = state.page // Page number (1, 2, 3, 4, 5, etc.)
@@ -25,6 +30,5 @@ export const getProductsSelector = createSelector(getProductsState, (state) => {
     const startIndex = (page - 1) * itemsPerPage
     const endIndex = page * itemsPerPage
 
-    // Retrieve the items for the current page
     return productsArray.slice(startIndex, endIndex)
 })

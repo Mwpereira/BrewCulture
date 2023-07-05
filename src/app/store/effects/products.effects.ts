@@ -74,7 +74,7 @@ export class ProductEffects {
         this.actions$.pipe(
             ofType(getProducts),
             withLatestFrom(this.store.pipe(select((state: any) => state))),
-            filter(([action, state]) => {
+            filter(([, state]) => {
                 const productsStore = state.products
                 const { products } = productsStore
 
@@ -95,7 +95,7 @@ export class ProductEffects {
             this.actions$.pipe(
                 ofType(refreshProducts),
                 withLatestFrom(this.store.pipe(select((state: any) => state))),
-                tap(([action, state]) => {
+                tap(([, state]) => {
                     const emptyArray: Coffee[] = []
                     this.store.dispatch(getProductsSuccess({ products: emptyArray }))
                 }),

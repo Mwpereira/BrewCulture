@@ -1,4 +1,6 @@
-<div class="flex flex-wrap justify-evenly max-md:justify-center max-lg:justify-between gap-y-8 max-sm:gap-x-4 lg:gap-x-4 xl:gap-x-0">
+<div
+    class="flex flex-wrap justify-evenly max-md:justify-center max-lg:justify-between gap-y-8 max-sm:gap-x-4 lg:gap-x-4 xl:gap-x-0"
+>
     <ng-container *ngIf="products$ | async as products">
         <ng-container *ngIf="products.length > 0; else emptyProducts">
             <ng-template ngFor let-element [ngForOf]="products" class="h-11 cursor-pointer">
