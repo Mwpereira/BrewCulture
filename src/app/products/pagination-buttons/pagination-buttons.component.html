@@ -1,0 +1,19 @@
+<div class="flex items-center text-orange-5">
+    <button
+        class="bg-orange-1 px-5 py-3 rounded-xl"
+        [ngClass]="top() ? 'bg-opacity-50' : 'hover:opacity-70'"
+        (click)="previousPage()"
+        [disabled]="top()"
+    >
+        <fa-icon [icon]="faChevronLeft"></fa-icon>
+    </button>
+    <p class="text-xl text-orange-10 font-semibold mx-4">Page {{ currentPage() }}</p>
+    <button
+        class="bg-orange-1 px-5 py-3 rounded-xl"
+        [ngClass]="bottom() ? 'bg-opacity-50' : 'hover:opacity-70'"
+        (click)="nextPage()"
+        [disabled]="bottom()"
+    >
+        <fa-icon [icon]="faChevronRight"></fa-icon>
+    </button>
+</div>

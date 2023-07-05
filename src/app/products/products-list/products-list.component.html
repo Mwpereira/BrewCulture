@@ -1,0 +1,21 @@
+<div class="flex flex-wrap justify-evenly max-md:justify-center max-lg:justify-between gap-y-8 gap-x-4">
+    <ng-container *ngIf="products$ | async as products">
+        <ng-container *ngIf="products.length > 0; else emptyProducts">
+            <ng-template ngFor let-element [ngForOf]="products" class="h-11 cursor-pointer">
+                <app-product-card [coffee]="element"></app-product-card>
+            </ng-template>
+        </ng-container>
+        <ng-template #emptyProducts>
+            <p class="text-orange-0">No products available.</p>
+        </ng-template>
+    </ng-container>
+</div>
+
+<ng-container *ngIf="products$ | async as products">
+    <ng-container *ngIf="products.length > 0">
+        <div class="flex justify-between mt-12">
+            <app-refresh-products></app-refresh-products>
+            <app-pagination-buttons></app-pagination-buttons>
+        </div>
+    </ng-container>
+</ng-container>

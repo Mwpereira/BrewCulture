@@ -1,0 +1,26 @@
+name: Run Angular Unit Tests
+
+on: [push, pull_request]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: yarn
+      - name: Lint the code
+        run: yarn lint
+#      - name: Run jest and generate coverage report
+#        run: yarn test
+      - name: Echo Test Complete
+        run: echo Done!

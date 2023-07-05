@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+
+<main>
+    <router-outlet></router-outlet>
+</main>
+
+<app-footer></app-footer>
+
+<!-- Form for Netlify (Hidden but required here for functionality) -->
+<form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <input
+        type="text"
+        id="name"
+        name="name"
+        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-orange-500 focus:border-orange-500"
+        placeholder="Enter your name"
+        required
+    />
+    <input
+        type="email"
+        id="email"
+        name="email"
+        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-orange-500 focus:border-orange-500"
+        placeholder="Enter your email"
+        required
+    />
+    <input
+        id="message"
+        name="message"
+        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-orange-500 focus:border-orange-500"
+        placeholder="Enter your message"
+        rows="5"
+        required
+    />
+</form>

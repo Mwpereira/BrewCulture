@@ -1,0 +1,5 @@
+export const HOME_TITLE = 'Home'
+export const ABOUT_TITLE = 'About'
+export const PRODUCTS_TITLE = 'Products'
+export const CONTACT_TITLE = 'Contact'
+export const PAGE_NOT_FOUND_TITLE = 'Page Not Found'

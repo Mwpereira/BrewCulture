@@ -1,0 +1,74 @@
+<!-- Navbar -->
+<nav class="bg-white border-gray-200 border border-l-0 border-r-0 border-outline-grey shadow-sm bg-opacity-50">
+    <div class="flex flex-wrap items-center justify-between mx-auto py-4 px-6">
+        <a href="" rel="noreferrer">
+            <app-logo></app-logo>
+        </a>
+        <button
+            (click)="toggleSidebar()"
+            data-collapse-toggle="navbar-default"
+            type="button"
+            class="inline-flex items-center p-2 ml-3 text-sm text-orange-5 rounded-lg md:hidden hover:bg-amber-100 focus:outline-none focus:ring-2 focus:ring-amber-700"
+            aria-controls="navbar-default"
+            aria-expanded="false"
+        >
+            <span class="sr-only">Open main menu</span>
+            <svg
+                class="w-6 h-6"
+                aria-hidden="true"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    fill-rule="evenodd"
+                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                    clip-rule="evenodd"
+                ></path>
+            </svg>
+        </button>
+        <ng-container *ngIf="sideBarMenuOpen">
+            <div
+                class="navbar-backdrop fixed inset-0 bg-brown-5 opacity-30 cursor-pointer"
+                (click)="closeSidebar()"
+            ></div>
+        </ng-container>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul class="font-bold flex flex-col md:flex-row md:space-x-4 md:mt-0 md:border-0 md:bg-white">
+                <ng-template
+                    ngFor
+                    let-element
+                    [ngForOf]="NAVIGATION_ROUTES"
+                    class="flex h-11 cursor-pointer items-center"
+                >
+                    <li class="flex text-base items-center">
+                        <button
+                            (click)="navigateToPage(router, element.route)"
+                            class="block px-3 py-2 text-orange-5 rounded-lg"
+                            [ngClass]="{
+                                'hover:bg-opacity-70': !isCurrentPageHover(element.route),
+                                'bg-orange-10 bg-opacity-90 text-white border-blue-600': isCurrentPageSelected(
+                                    element.route
+                                ),
+                                'bg-orange-1': !isCurrentPageSelected(element.route)
+                            }"
+                        >
+                            {{ element.label }}
+                        </button>
+                    </li>
+                </ng-template>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<nav
+    class="navbar-menu h-screen fixed bg-white text-stone-600 sm:px-4 w-2/3 top-0 left-0 bottom-0 flex min-h-screen flex-col pt-2.5 font-medium text-tertiary-blue justify-between min-w-fit max-w-sm"
+    [ngClass]="
+        sideBarMenuOpen
+            ? 'translate-x-0 transform ease-out duration-300'
+            : '-translate-x-full transform ease-out duration-300'
+    "
+>
+    <app-sidebar *ngIf="sideBarMenuOpen" (closeSidebar)="closeSidebar()"></app-sidebar>
+</nav>

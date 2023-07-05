@@ -1,0 +1,42 @@
+<div class="min-h-screen flex justify-center">
+    <div class="mt-10 container mx-auto px-4">
+        <div class="flex">
+            <p
+                class="mb-6 font-bold text-orange-10 cursor-pointer hover:text-amber-700"
+                (click)="navigateToPage(router, PRODUCTS_ROUTE)"
+            >
+                <fa-icon [icon]="faChevronLeft" class="text-sm"></fa-icon> Back
+            </p>
+        </div>
+        <div class="py-8">
+            <ng-container>
+                <ng-container *ngIf="product && Object.keys(product).length !== 0; else notFound">
+                    <div class="flex flex-wrap md:space-x-8">
+                        <div>
+                            <!-- Render the product image -->
+                            <img
+                                [src]="sampleImagePath + product.imgId + '.png'"
+                                [alt]="product.blend_name"
+                                class="w-96 h-96 p-6"
+                            />
+                        </div>
+                        <section class="max-md:pt-8" id="productDetails">
+                            <p class="text-xl font-bold pb-10">{{ product.blend_name }}</p>
+                            <div class="flex flex-col gap-y-4">
+                                <!-- Render the product details -->
+                                <p><span class="font-semibold">Blend Name</span> - {{ product.blend_name }}</p>
+                                <p><span class="font-semibold">Origin</span> - {{ product.origin }}</p>
+                                <p><span class="font-semibold">Variety</span> - {{ product.variety }}</p>
+                                <p><span class="font-semibold">Notes</span> - {{ product.notes }}</p>
+                            </div>
+                        </section>
+                    </div>
+                </ng-container>
+                <ng-template #notFound>
+                    <!-- Render the not found template -->
+                    <p class="text-orange-0">Product is not available.</p>
+                </ng-template>
+            </ng-container>
+        </div>
+    </div>
+</div>

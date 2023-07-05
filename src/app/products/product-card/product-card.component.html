@@ -1,0 +1,17 @@
+<div
+    class="max-sm:w-72 w-80 bg-white border border-gray-200 rounded-lg shadow cursor-pointer hover:bg-orange-50"
+    (click)="navigateToProductDetails(coffee.uid)"
+>
+    <div class="container p-6">
+        <img
+            [src]="sampleImagePath + coffee.imgId + '.png'"
+            alt="Coffee Product"
+            class="w-24 h-24 mx-auto rounded-lg mb-4"
+        />
+        <p class="text-xl font-semibold">{{ coffee.blend_name }}</p>
+        <span class="flex">
+            <!--    <fa-icon [icon]="faEarthAmericas" class="mr-2 text-gray-400"></fa-icon>-->
+            <p>{{ coffee.origin }}</p>
+        </span>
+    </div>
+</div>

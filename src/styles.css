@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: 'Nunito', serif !important;
+}
+
+@layer base {
+    html {
+        font-family: 'Nunito', serif;
+    }
+}
+
+html,
+body {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    @apply antialiased;
+}
+
+body {
+    background-image: url('assets/images/background.svg');
+    background-repeat: repeat;
+    background-attachment: fixed;
+}

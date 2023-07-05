@@ -1,0 +1,33 @@
+<aside aria-label="Sidebar" class="flex flex-col justify-between min-h-full pt-8 lg:pt-0">
+    <div>
+        <div class="mx-8 rounded cursor-default select-none flex items-center justify-center lg:hidden">
+            <app-logo></app-logo>
+        </div>
+        <div class="overflow-y-auto rounded py-8 px-4 font-semibold lg:pt-0">
+            <ul class="flex flex-col justify-between">
+                <ng-template
+                    ngFor
+                    let-element
+                    [ngForOf]="NAVIGATION_ROUTES"
+                    class="flex h-11 cursor-pointer items-center"
+                >
+                    <li class="flex text-base items-center">
+                        <button
+                            (click)="navigateToPage(element.route)"
+                            class="block px-3 py-2 text-orange-5 rounded-lg w-full mb-4"
+                            [ngClass]="{
+                                'hover:bg-opacity-70': !isCurrentPageHover(element.route),
+                                'bg-orange-10 bg-opacity-90 text-white border-blue-600': isCurrentPageSelected(
+                                    element.route
+                                ),
+                                'bg-orange-1': !isCurrentPageSelected(element.route)
+                            }"
+                        >
+                            {{ element.label }}
+                        </button>
+                    </li>
+                </ng-template>
+            </ul>
+        </div>
+    </div>
+</aside>

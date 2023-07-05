@@ -1,0 +1,8 @@
+export const GET_PAGE = '[Products] Get Page'
+export const SET_PAGE = '[Products] Set Page'
+export const PREVIOUS_PAGE = '[Products] Previous Page'
+export const NEXT_PAGE = '[Products] Next Page'
+export const GET_PRODUCTS = '[Products] Get Products'
+export const GET_PRODUCTS_SUCCESS = '[Products] Get Products Success'
+export const GET_PRODUCTS_FAILURE = '[Products] Get Products Failure'
+export const REFRESH_PRODUCTS = '[Products] Refresh Products'
