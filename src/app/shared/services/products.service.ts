@@ -13,6 +13,9 @@ export class ProductsService {
     async getProducts(): Promise<Coffee[]> {
         const products = await lastValueFrom(this.apiService.getCoffees())
 
+
+        return new Promise((resolve) => {
+
         products.forEach((product: Coffee) => {
             // Pick a random number to choose a sample image
             const randomNumber = Math.floor(Math.random() * TOTAL_SAMPLE_IMAGES)
@@ -20,6 +23,7 @@ export class ProductsService {
             product.imgId = randomNumber + 1
         })
 
-        return products
+        resolve(products)
+    })
     }
 }
