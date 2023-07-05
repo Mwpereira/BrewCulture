@@ -1,5 +1,7 @@
 # ☕ BrewCulture
 
+[Click for Live Demo](https://brewculture.netlify.app/)
+
 Discover the perfect blend of convenience and ambiance at BrewCulture, where we serve up exceptional coffee experiences online and in-person.
 
 ## ⚒️ Frameworks
@@ -19,10 +21,10 @@ The live version of this website is hosted on Netlify!
 
 ## 📷 Gallery
 
-<img src="./gallery/home-page.png" width="700px" height="300" />
-<img src="./gallery/about-page.png" width="700px" height="300" />
-<img src="./gallery/products-page.png" width="700px" height="300" />
-<img src="./gallery/contact-page.png" width="700px" height="300" />
+<img src="./gallery/home-page.png" width="700px" height="350" />
+<img src="./gallery/about-page.png" width="700px" height="350" />
+<img src="./gallery/products-page.png" width="700px" height="350" />
+<img src="./gallery/contact-page.png" width="700px" height="350" />
 
 ## 📖 Meta Content
 
