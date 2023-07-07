@@ -4,7 +4,7 @@ import { faRefresh } from '@fortawesome/free-solid-svg-icons/faRefresh'
 import { Store } from '@ngrx/store'
 import { PRODUCTS_ROUTE } from '../../core/constants/routes.constants'
 import { navigateToPage } from '../../core/utils/website.utils'
-import { getProducts, refreshProducts } from '../../store/actions/products.actions'
+import { getProducts, refreshProducts, setPage } from '../../store/actions/products.actions'
 
 @Component({
     selector: 'app-refresh-products',
@@ -20,5 +20,6 @@ export class RefreshProductsComponent {
         this.store.dispatch(refreshProducts())
         await navigateToPage(this.router, PRODUCTS_ROUTE)
         this.store.dispatch(getProducts())
+        this.store.dispatch(setPage({ page: 1 }))
     }
 }
