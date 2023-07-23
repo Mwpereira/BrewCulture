@@ -8,10 +8,9 @@
             alt="Coffee Product"
             class="w-24 h-24 mx-auto rounded-lg mb-4"
         />
-        <p class="text-xl font-semibold">{{ coffee.blend_name }}</p>
+        <p class="text-xl font-semibold truncate">{{ coffee.blend_name }}</p>
         <span class="flex">
-            <!--    <fa-icon [icon]="faEarthAmericas" class="mr-2 text-gray-400"></fa-icon>-->
-            <p>{{ coffee.origin }}</p>
+            <p class="truncate">{{ coffee.origin }}</p>
         </span>
     </div>
 </div>
